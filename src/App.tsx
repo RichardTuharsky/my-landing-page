@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import GlobalStyles from './styles/GlobalStyles';
-import SeeWhatsInside from './components/SeeWhatsInside'; // Adjust the path as necessary
+import SeeWhatsInside from './components/SeeWhatsInside';
+
+
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const [emailError, setEmailError] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [subscribed, setSubscribed] = useState<boolean>(false);
+  const [emailError, setEmailError] = useState<string>('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
     if (emailError) setEmailError('');
   };
 
-  const handleSubscribe = () => {
+  const handleSubscribe = (): void => {
     if (email.trim() === '') {
       setEmailError('Please enter your email');
       return;
@@ -27,6 +29,29 @@ function App() {
     setSubscribed(true);
   };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/submit-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email }),
+      });
+      console.log('Sending email:', email);
+      if (response.ok) {
+        setIsSubmitted(true);
+      }
+      const data = await response.json();
+      console.log('Success:', data);
+      // Handle success (e.g., showing a thank you message or alert)
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+
   return (
     <>
       <GlobalStyles />
@@ -38,7 +63,7 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        <img src="/my-landing-page/src/assets/logo.png" alt="Logo" style={{ width: '30px', height: '30px' }} />
+        <img src="/logo.png" alt="Logo" style={{ width: '30px', height: '30px' }} />
       </div> 
       <div style={{ 
         display: 'flex', 
@@ -63,7 +88,7 @@ function App() {
         {!subscribed ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ display: 'flex', marginBottom: '10px' }}>
-              <input
+              <input 
                 type="email"
                 value={email}
                 onChange={handleInputChange}
@@ -120,7 +145,7 @@ function App() {
         color: 'white',
         fontSize: '14px',
       }}>
-        <img src="/assets/logo.png" alt="Artfuly-Logo" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
+        <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
       <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
       </div> 
       
