@@ -12,23 +12,23 @@ const SeeWhatsInside: React.FC = () => {
     <div className="container">
       <div className="options">
         <div className="option" onClick={() => handleFeatureClick('collage')}>
-          <h3>Collage</h3>
           {/* Replace these placeholders with actual icons */}
-          <div className="icon-placeholder">Icon 1</div>
+          <img src="Collage.png" alt="Collage" style={{ width: '80px', height: '80px'}} />
+          <p style={{color: 'gray'}}>Collage</p>
           {selectedFeature === 'collage' && <p>Description of Collage feature...</p>}
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
-          <h3>Watermark</h3>
           {/* Replace these placeholders with actual icons */}
-          <div className="icon-placeholder">Icon 2</div>
+          <img src="watermark.png" alt="Watermark" style={{ width: '80px', height: '80px'}}/>
+          <p style={{color: 'gray'}}>Watermark</p>
           {selectedFeature === 'watermark' && <p>Description of Watermark feature...</p>}
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('size')}>
-          <h3>Size of the Collage</h3>
           {/* Replace these placeholders with actual icons */}
-          <div className="icon-placeholder">Icon 3</div>
+          <img src="Sizing.png" alt="Sizing"style={{ width: '60px', height: '60px', marginTop: '13px'}}/>
+          <p style={{color: 'gray'}}>Sizing</p>
           {selectedFeature === 'size' && <p>Description of Collage Size feature...</p>}
         </div>
       </div>
