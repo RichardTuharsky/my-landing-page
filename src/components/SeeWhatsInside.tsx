@@ -11,9 +11,20 @@ const SeeWhatsInside: React.FC = () => {
 
   const descriptions: { [key: string]: string } = {
     'collage': 'Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.',
-    'watermark': 'Description of Watermark feature...',
-    'size': 'Description of Collage Size feature...',
+    'watermark': 'Automatically apply a watermark across your collage to deter unauthorized copying.',
+    'size': 'You can export the collage in any resolution of your choice.',
   };
+
+  const getImageSrc = (feature: string) => {
+    const baseSrc: { [key: string]: string } = {
+      'collage': 'Collage',
+      'watermark': 'watermark',
+      'size': 'Sizing'
+    };
+
+    return selectedFeature === feature ? `${baseSrc[feature]}_color.png` : `${baseSrc[feature]}.png`;
+  };
+  
 
   const typeText = (text: string) => {
     let currentIndex = 0;
@@ -45,16 +56,17 @@ const SeeWhatsInside: React.FC = () => {
       <div className="options">
         <div className="option" onClick={() => handleFeatureClick('collage')}>
           {/* Replace these placeholders with actual icons */}
-          <img src="Collage_color.png" alt="Collage" style={{ width: '80px', height: '80px' }} />
+          <img src={getImageSrc('collage')} alt="Collage" style={{ width: '80px', height: '80px' }} />
           <p style={{ color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
           {selectedFeature === 'collage' && (
             <p className="typing-effect">{typingState['collage']}</p>
+            
           )}
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
           {/* Replace these placeholders with actual icons */}
-          <img src="watermark_color.png" alt="Watermark" style={{ width: '80px', height: '80px' }} />
+          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '80px', height: '80px' }} />
           <p style={{ color: selectedFeature === 'watermark' ? 'black' : 'gray' }}>Watermark</p>
           {selectedFeature === 'watermark' && (
             <p className="typing-effect">{typingState['watermark']}</p>
@@ -63,7 +75,7 @@ const SeeWhatsInside: React.FC = () => {
 
         <div className="option" onClick={() => handleFeatureClick('size')}>
           {/* Replace these placeholders with actual icons */}
-          <img src="Sizing_color.png" alt="Sizing" style={{ width: '60px', height: '60px', marginTop: '13px' }} />
+          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '60px', height: '60px', marginTop: '13px' }} />
           <p style={{ color: selectedFeature === 'size' ? 'black' : 'gray' }}>Sizing</p>
           {selectedFeature === 'size' && (
             <p className="typing-effect">{typingState['size']}</p>
