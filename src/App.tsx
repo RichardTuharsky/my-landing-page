@@ -5,13 +5,25 @@ import SeeWhatsInside from './components/SeeWhatsInside'; // Adjust the path as 
 function App() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [emailError, setEmailError] = useState('');
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    if (emailError) setEmailError('');
   };
 
   const handleSubscribe = () => {
-    // Perform subscription logic here
+    if (email.trim() === '') {
+      setEmailError('Please enter your email');
+      return;
+    }
+
+    if (!email.includes('@')) {
+      setEmailError('Please enter a valid email');
+      return;
+    }
+
     setSubscribed(true);
   };
 
@@ -89,7 +101,9 @@ function App() {
               >
                 Subscribe
               </button>
+                
             </div>
+              <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
           </div>
         ) : (
           <p style={{color: "white", fontWeight: "bold"}}>Thank you for your subscription!</p>

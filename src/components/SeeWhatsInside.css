@@ -5,6 +5,8 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     max-width: 800px;
+    height: 100%;
+    max-height: 1500px;
     margin: 40px auto;
     width: 90%;
     box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
@@ -73,4 +75,52 @@
   }
   
   /* Add more styles as needed to option, heading, text, and button */
+  
+  .feature-icon {
+    width: 80px; 
+    height: 80px;
+    transition: transform 0.3s ease; /* Adds a smooth transition effect */
+  }
+  
+  .feature-icon:hover {
+    transform: scale(1.1); /* Scales the icon up slightly on hover */
+  }
+  
+  /* Adjust the .feature-icon class for the 'size' icon separately if needed */
+  .feature-description {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1.5s ease, max-height 1.5s ease;
+  }
+  
+  .feature-description.visible {
+    opacity: 1;
+    max-height: 100px; /* Adjust max-height according to your content */
+  }
+  
+  .feature-image {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .typing-effect {
+    overflow: hidden; /* Ensures the content doesn't overflow */
+    border-right: .15em solid black; /* Cursor-like border */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 2s steps(40, end), /* 40 is the number of steps (characters) */
+      blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
   
