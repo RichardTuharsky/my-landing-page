@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SeeWhatsInside.css'; // Ensure your CSS file contains styles for these new elements
 
 const SeeWhatsInside: React.FC = () => {
+  const [selectedFeature, setSelectedFeature] = useState<string | null>(null);
+
+  const handleFeatureClick = (feature: string) => {
+    setSelectedFeature(feature);
+  };
+
   return (
     <div className="container">
-      {/* <h2 className="heading">See What's Inside</h2>
-      <p className="text">Explore our features and discover the tools and techniques to enhance your online marketing strategies.</p> */}
-      
       <div className="options">
-        <div className="option">
+        <div className="option" onClick={() => handleFeatureClick('collage')}>
           <h3>Collage</h3>
-          <p>Description of Collage feature...</p>
-          <button className="button">Explore Collage</button>
+          {/* Replace these placeholders with actual icons */}
+          <div className="icon-placeholder">Icon 1</div>
+          {selectedFeature === 'collage' && <p>Description of Collage feature...</p>}
         </div>
 
-        <div className="option">
+        <div className="option" onClick={() => handleFeatureClick('watermark')}>
           <h3>Watermark</h3>
-          <p>Description of Watermark feature...</p>
-          <button className="button">Explore Watermark</button>
+          {/* Replace these placeholders with actual icons */}
+          <div className="icon-placeholder">Icon 2</div>
+          {selectedFeature === 'watermark' && <p>Description of Watermark feature...</p>}
         </div>
 
-        <div className="option">
+        <div className="option" onClick={() => handleFeatureClick('size')}>
           <h3>Size of the Collage</h3>
-          <p>Description of Collage Size feature...</p>
-          <button className="button">Explore Sizes</button>
+          {/* Replace these placeholders with actual icons */}
+          <div className="icon-placeholder">Icon 3</div>
+          {selectedFeature === 'size' && <p>Description of Collage Size feature...</p>}
         </div>
       </div>
     </div>
