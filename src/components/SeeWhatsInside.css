@@ -72,6 +72,8 @@
   .option {
     flex-basis: 33%; /* Allocate equal width for each option */
     text-align: center;
+    max-width: 300px; /* Example value, adjust as needed */
+    position: relative;
   }
   
   /* Add more styles as needed to option, heading, text, and button */
@@ -110,9 +112,13 @@
   }
   
   .typing-effect {
-    overflow: hidden; /* Ensures the content doesn't overflow */
+    overflow: hidden;
+
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     border-right: .15em solid black; /* Cursor-like border */
-    white-space: nowrap; /* Keeps the content on a single line */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
       typing 2s steps(40, end), /* 40 is the number of steps (characters) */
