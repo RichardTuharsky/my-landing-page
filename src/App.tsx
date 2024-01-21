@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GlobalStyles from './styles/GlobalStyles';
+import SeeWhatsInside from './components/SeeWhatsInside'; // Adjust the path as necessary
 
 function App() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ function App() {
       <div style={{ 
         width: '100%', 
         height: '50px', 
-        background: '#BC5E45',
+        background: 'rgb(17,19,23)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -33,19 +34,20 @@ function App() {
         alignItems: 'center', 
         height: '100vh', 
         background: '#ff6600',
-        paddingTop: '150px'  
+        paddingTop: '80px'  
       }}>
+  
         <h1 style={{ 
           color: 'white', 
           fontFamily: 'sans-serif', 
           fontSize: '40px', 
           textAlign: "center", 
-          marginBottom: '0px', // Reduced margin
+          marginBottom: '10px', // Reduced margin
           fontWeight: '1000', // Add fontWeight property
         }}>
           Effortlessly craft stunning collages in minutes.
         </h1>
-          <p style={{ fontSize: '30px', color: "white", marginBottom: "40px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
+          <p style={{ fontSize: '30px', color: "white", marginBottom: "60px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
         {!subscribed ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ display: 'flex', marginBottom: '10px' }}>
@@ -74,6 +76,15 @@ function App() {
                   marginLeft: '10px',
                   fontWeight: 'bold',
                   fontSize: '16px', // Increase font size
+                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
+                  transition: 'box-shadow 0.3s ease', // Add transition for hover effect
+                }}
+                // Add hover style
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.25)';
                 }}
               >
                 Subscribe
@@ -82,7 +93,8 @@ function App() {
           </div>
         ) : (
           <p style={{color: "white", fontWeight: "bold"}}>Thank you for your subscription!</p>
-        )}
+          )}
+          <SeeWhatsInside />
       </div>
       <div style={{ 
         width: '100%', 
@@ -97,7 +109,9 @@ function App() {
         <img src="/assets/logo.png" alt="Artfuly-Logo" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
       <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
       </div> 
+      
     </>
+    
   );
 }
 
