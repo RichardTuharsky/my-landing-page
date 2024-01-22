@@ -5,7 +5,7 @@ import SeeWhatsInside from './components/SeeWhatsInside';
 
 
 function App() {
-  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
@@ -88,19 +88,29 @@ function App() {
         {!subscribed ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ display: 'flex', marginBottom: '10px' }}>
-              <input 
-                type="email"
-                value={email}
-                onChange={handleInputChange}
-                placeholder="Enter your email"
-                style={{
-                  padding: '15px', // Increase padding
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  width: '400px', // Increase width
-                  fontSize: '16px', // Increase font size
-                }}
-              />
+            <form className="flex space-x-2" onSubmit={handleSubmit}>
+                <input 
+                  className="max-w-sm flex-1 border-2 border-gray-300 rounded-md px-1 py-1" 
+                  placeholder="Your email here" 
+                  type="email" 
+                  name="email" 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  style={{
+                    padding: '15px 80px', // Increase padding
+                    background: 'white',
+                    color: 'black',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    marginLeft: '10px',
+                    fontWeight: 'bold',
+                    fontSize: '16px', // Increase font size
+                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
+                    transition: 'box-shadow 0.3s ease', // Add transition for hover effect
+                  }}
+                />
+              </form>
               <button
                 onClick={handleSubscribe}
                 style={{
@@ -130,9 +140,15 @@ function App() {
             </div>
               <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
           </div>
+         ) : isSubmitted ? (
+          <p className="text-lg text-gray-500">
+            Thank you for subscribing, it means a lot to us!
+          </p>
         ) : (
-          <p style={{color: "white", fontWeight: "bold"}}>Thank you for your subscription!</p>
-          )}
+          <form className="flex space-x-2" onSubmit={handleSubmit}>
+            {/* Rest of the form code */}
+          </form>
+        )}
           <SeeWhatsInside />
       </div>
       <div style={{ 
