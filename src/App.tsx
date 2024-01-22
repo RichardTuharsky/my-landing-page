@@ -63,7 +63,7 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        <img src="/logo.png" alt="Logo" style={{ width: '30px', height: '30px' }} />
+        <img src="/logo.png" alt="Logo" style={{ width: '250px', height: '250px' }} />
       </div> 
       <div style={{ 
         display: 'flex', 
@@ -161,7 +161,7 @@ function App() {
         color: 'white',
         fontSize: '14px',
       }}>
-        <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
+        <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '130px', height: '130px', marginRight: '10px' }} />
       <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
       </div> 
       
