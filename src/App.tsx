@@ -54,6 +54,7 @@ function App() {
 
   return (
     <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <GlobalStyles />
       <div style={{ 
         width: '100%', 
@@ -62,17 +63,20 @@ function App() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
-        <img src="/logo.png" alt="Logo" style={{ width: '250px', height: '250px' }} />
+        }}>
+          <img src="/logo.png" alt="Logo" style={{ width: '250px', height: '250px' }} />
       </div> 
-      <div style={{ 
+      <div className = "main-div" style={{ 
         display: 'flex', 
         flexDirection: 'column', 
         alignItems: 'center', 
         height: '100vh', 
         background: '#ff6600',
-        paddingTop: '80px'  
-      }}>
+        paddingTop: '80px', 
+        flex: 1, 
+        paddingBottom: '50px'
+        
+        }}>
   
         <h1 style={{ 
           color: 'white', 
@@ -151,22 +155,23 @@ function App() {
         )}
           <SeeWhatsInside />
       </div>
-      <div style={{ 
-        width: '100%', 
-        height: '50px', 
-        background: 'rgb(17,19,23)', // Change background color to light grey
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        fontSize: '14px',
-      }}>
-        <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '130px', height: '130px', marginRight: '10px' }} />
-      <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
-      </div> 
-      
+        <div style={{ 
+          bottom: 0,
+          width: '100%', 
+          height: '50px', 
+          background: 'rgb(17,19,23)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'white',
+          fontSize: '14px',
+          position: 'static'
+          }}>
+          <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '130px', height: '130px', marginRight: '10px' }} />
+          <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
+        </div> 
+    </div> 
     </>
-    
   );
 }
 
