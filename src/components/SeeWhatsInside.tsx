@@ -42,6 +42,10 @@ const SeeWhatsInside: React.FC = () => {
   };
 
   useEffect(() => {
+    handleFeatureClick('collage'); // Set the default selected feature to 'collage'
+  }, []);
+
+  useEffect(() => {
     if (selectedFeature) {
       setTypingState((prevState) => ({
         ...prevState,
@@ -58,10 +62,11 @@ const SeeWhatsInside: React.FC = () => {
           {/* Replace these placeholders with actual icons */}
           <img src={getImageSrc('collage')} alt="Collage" style={{ width: '80px', height: '80px' }} />
           <p style={{ color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
-          {selectedFeature === 'collage' && (
+          {/* {selectedFeature === 'collage' && (
             <p className="typing-effect">{typingState['collage']}</p>
             
-          )}
+          )} */}
+          <p>Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.</p>
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
