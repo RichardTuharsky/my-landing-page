@@ -101,7 +101,7 @@ function App() {
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)} 
                   style={{
-                    padding: '15px 80px', // Increase padding
+                    padding: '15px 40px', // Increase padding
                     background: 'white',
                     color: 'black',
                     border: 'none',
