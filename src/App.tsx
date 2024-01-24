@@ -16,6 +16,7 @@ function App() {
   };
 
   const handleSubscribe = (): void => {
+    console.log('Subscribing:', email);
     if (email.trim() === '') {
       setEmailError('Please enter your email');
       return;
@@ -54,7 +55,7 @@ function App() {
 
   return (
     <>
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
       <GlobalStyles />
       <div style={{ 
         width: '100%', 
@@ -114,9 +115,10 @@ function App() {
                     transition: 'box-shadow 0.3s ease', // Add transition for hover effect
                   }}
                 />
-              </form>
               <button
-                onClick={handleSubscribe}
+                type='submit'
+                // onClick={handleSubscribe}
+                
                 style={{
                   padding: '15px 30px', // Increase padding
                   background: '#33CC33',
@@ -137,9 +139,10 @@ function App() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.25)';
                 }}
-              >
+                >
                 Subscribe
               </button>
+            </form>
                 
             </div>
               <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
@@ -165,7 +168,7 @@ function App() {
           alignItems: 'center',
           color: 'white',
           fontSize: '14px',
-          position: 'static'
+          position: 'relative',
           }}>
           <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '130px', height: '130px', marginRight: '10px' }} />
           <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
