@@ -15,6 +15,7 @@ function App() {
     if (emailError) setEmailError('');
   };
 
+
   const handleSubscribe = (): void => {
     console.log('Subscribing:', email);
     if (email.trim() === '') {
