@@ -91,73 +91,67 @@ function App() {
           Effortlessly craft stunning collages in minutes.
         </h1>
           <p style={{ fontSize: '30px', color: "white", marginBottom: "60px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
-        {!subscribed ? (
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ display: 'flex', marginBottom: '10px' }}>
-            <form className="flex space-x-2" onSubmit={handleSubmit}>
-                <input 
-                  className="max-w-sm flex-1 border-2 border-gray-300 rounded-md px-1 py-1" 
-                  placeholder="Your email here" 
-                  type="email" 
-                  name="email" 
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
-                  style={{
-                    padding: '15px 40px', // Increase padding
-                    background: 'white',
-                    color: 'black',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    marginLeft: '10px',
-                    fontWeight: 'bold',
-                    fontSize: '16px', // Increase font size
-                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
-                    transition: 'box-shadow 0.3s ease', // Add transition for hover effect
-                  }}
-                />
-              <button
-                type='submit'
-                // onClick={handleSubscribe}
-                
-                style={{
-                  padding: '15px 30px', // Increase padding
-                  background: '#33CC33',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  marginLeft: '10px',
-                  fontWeight: 'bold',
-                  fontSize: '16px', // Increase font size
-                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
-                  transition: 'box-shadow 0.3s ease', // Add transition for hover effect
-                }}
-                // Add hover style
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.25)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.25)';
-                }}
-                >
-                Subscribe
-              </button>
-            </form>
-                
-            </div>
+        {!isSubmitted ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', marginBottom: '10px' }}>
+                <form className="flex space-x-2" onSubmit={handleSubmit}>
+                  <input 
+                    className="max-w-sm flex-1 border-2 border-gray-300 rounded-md px-1 py-1" 
+                    placeholder="Your email here" 
+                    type="email" 
+                    name="email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    style={{
+                      padding: '15px 40px', // Increase padding
+                      background: 'white',
+                      color: 'black',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      marginLeft: '10px',
+                      fontWeight: 'bold',
+                      fontSize: '16px', // Increase font size
+                      boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
+                      transition: 'box-shadow 0.3s ease', // Add transition for hover effect
+                    }}
+                  />
+                  <button
+                    type='submit'
+                    style={{
+                      padding: '15px 30px', // Increase padding
+                      background: '#33CC33',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      marginLeft: '10px',
+                      fontWeight: 'bold',
+                      fontSize: '16px', // Increase font size
+                      boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // Add box shadow
+                      transition: 'box-shadow 0.3s ease', // Add transition for hover effect
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.25)';
+                    }}
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
               <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
-          </div>
-         ) : isSubmitted ? (
-          <p className="text-lg text-gray-500">
-            Thank you for subscribing, it means a lot to us!
-          </p>
-        ) : (
-          <form className="flex space-x-2" onSubmit={handleSubmit}>
-            {/* Rest of the form code */}
-          </form>
-        )}
-          <SeeWhatsInside />
+            </div>
+          ) : (
+            <p className="text-lg text-gray-500" style={{ textAlign: 'center', marginTop: '20px' }}>
+              Thank you for subscribing, it means a lot to us!
+            </p>
+          )
+        }
+
+        <SeeWhatsInside />
       </div>
         <div style={{ 
           bottom: 0,
