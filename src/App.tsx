@@ -145,7 +145,7 @@ function App() {
               <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
             </div>
           ) : (
-            <p className="text-lg text-gray-500" style={{ textAlign: 'center', marginTop: '20px' }}>
+            <p className="text-lg text-gray-500" style={{ textAlign: 'center', marginTop: '20px', color: 'white', fontWeight: 'bold' }}>
               Thank you for subscribing, it means a lot to us!
             </p>
           )
