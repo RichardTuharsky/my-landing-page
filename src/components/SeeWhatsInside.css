@@ -127,16 +127,21 @@
   
   
   @keyframes popUp {
-    0%, 100% {
+    0%, 25%, 100% { /* 25% of 4s = 1s of animation */
       transform: scale(1);
     }
-    25%, 75% { /* Stay popped up longer */
-      transform: scale(1.3);
+    12.5% { /* Middle of the animation phase */
+      transform: scale(1.1);
     }
   }
   
   
-.popUpEffect {
-  animation: popUp 2s ease-in-out infinite;
-  animation-delay: 3s;
-}
+  
+  .popUpEffect {
+    animation-name: popUp;
+    animation-duration: 5s; /* Duration of one animation cycle */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 4s; /* Initial delay before the animation starts */
+  }
+  

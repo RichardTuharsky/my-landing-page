@@ -67,7 +67,7 @@ const handleImageClick = (path: string) => {
 };
 
 const imageDescriptions = [
-  'Prepare blank page',
+  'Prepare blank page ',
   'Upload the images',
   'Center the images',
   'Everyting aligned',
@@ -113,7 +113,7 @@ const imageDescriptions = [
         }}>
           Effortlessly craft stunning collages in minutes.
         </h1>
-          <p style={{ fontSize: '30px', color: "white", marginBottom: "60px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
+          <p style={{ fontSize: '30px', color: "white", marginBottom: "90px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
         {!isSubmitted ? (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ display: 'flex', marginBottom: '10px' }}>
@@ -174,7 +174,7 @@ const imageDescriptions = [
             
             )
           }
-          <h1>Standard process of creating collages</h1>
+          <h1 style={{ marginTop: '60px', fontSize: '55px'}}>Standard process of creating collages.</h1>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
           {imagePaths.map((path, index) => (
             <div key={index} style={{ margin: '10px', textAlign: 'center', position: 'relative' }}>
@@ -184,11 +184,14 @@ const imageDescriptions = [
                 className="image-hover-effect"
                 style={{ width: '150px', height: '150px' }} // Adjust size as needed
               />
-              <p style={{ marginTop: '5px', fontWeight: 'bold',}}>{imageDescriptions[index]}</p>
+              <p style={{ marginTop: '5px', fontStyle: 'italic', fontSize: '13px' }}>{imageDescriptions[index]}</p>
             </div>
           ))}
 
         </div>
+          <h1 style={{marginTop: '90px'}}>
+            Boring, repetitive with <u style={{textDecoration: 'underline'}}>low</u> ROI, wouldn't you agree?
+          </h1>
 
         {/* Large Image View */}
         {selectedImagePath && (
