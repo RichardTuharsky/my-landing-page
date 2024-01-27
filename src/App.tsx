@@ -136,9 +136,10 @@ function App() {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.25)';
                     }}
-                  >
+                    >
                     Subscribe
                   </button>
+                    <p style={{justifyContent: 'left', marginLeft: '10px', marginTop: '5px', fontSize: '15px', fontStyle: 'italic'}}>Subcribe to get notified about launch.</p>
                 </form>
               </div>
               <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
