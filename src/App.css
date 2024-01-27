@@ -45,7 +45,7 @@
 }
 
 .image-hover-effect:hover {
-  transform: scale(3); /* Adjust scale factor as needed */
+  transform: scale(2); /* Adjust scale factor as needed */
   z-index: 2; /* Ensure the image is above other content */
 }
 

@@ -113,7 +113,7 @@ const imageDescriptions = [
         }}>
           Effortlessly craft stunning collages in minutes.
         </h1>
-          <p style={{ fontSize: '30px', color: "white", marginBottom: "90px", textAlign: "center" }}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
+          <p style={{ fontSize: '30px', color: "white", marginBottom: "90px", textAlign: "center", textDecoration: 'underline'}}>Streamline the collage creation for seamless results and save <br /> hours of energy & headache!</p>
         {!isSubmitted ? (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ display: 'flex', marginBottom: '10px' }}>
@@ -182,9 +182,9 @@ const imageDescriptions = [
                 src={path} 
                 alt={`Image ${index + 1}`}
                 className="image-hover-effect"
-                style={{ width: '150px', height: '150px' }} // Adjust size as needed
+                style={{ width: '250px', height: '250px' }} // Adjust size as needed
               />
-              <p style={{ marginTop: '5px', fontStyle: 'italic', fontSize: '13px' }}>{imageDescriptions[index]}</p>
+              <p style={{ marginTop: '5px', fontStyle: 'italic', fontSize: '20px' }}>{imageDescriptions[index]}</p>
             </div>
           ))}
 
