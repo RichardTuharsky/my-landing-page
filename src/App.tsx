@@ -76,8 +76,7 @@ function App() {
         background: '#ff6600',
         paddingTop: '80px', 
         flex: 1, 
-        paddingBottom: '250px'
-        
+        paddingBottom: '150px',
         }}>
   
         <h1 style={{ 
@@ -163,6 +162,7 @@ function App() {
           alignItems: 'center',
           color: 'white',
           fontSize: '14px',
+          paddingBottom: '40px',  
           }}>
           <img src="/logo.png" alt="Artfuly-Logo" style={{ width: '130px', height: '130px', marginRight: '10px' }} />
           <p style={{ fontSize: '13px', color: "grey", textAlign: "left" }}>2024 Artfuly. All rights reserved.</p>
