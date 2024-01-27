@@ -38,5 +38,11 @@
 }
 
 
+.image-hover-effect {
+  transition: transform 0.3s ease;
+}
 
+.image-hover-effect:hover {
+  transform: scale(1.1); /* Enlarge the image slightly on hover */
+}
   

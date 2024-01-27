@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 import SeeWhatsInside from './components/SeeWhatsInside';
-
-
+import './App.css';
 
 function App() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [selectedImagePath, setSelectedImagePath] = useState<string | null>(null);
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
@@ -52,6 +53,19 @@ function App() {
       console.error('Error:', error);
     }
   };
+
+  const imagePaths = [
+    '/image1.png',
+    '/image2.png',
+    '/image3.png',
+    '/image4.png',
+    '/image5.png'
+  ];
+
+const handleImageClick = (path: string) => {
+  setSelectedImagePath(path);
+};
+
 
 
   return (
@@ -142,14 +156,40 @@ function App() {
                     <p style={{justifyContent: 'left', marginLeft: '10px', marginTop: '5px', fontSize: '15px', fontStyle: 'italic'}}>Subcribe to get notified about launch.</p>
                 </form>
               </div>
-              <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
             </div>
           ) : (
             <p className="text-lg text-gray-500" style={{ textAlign: 'center', marginTop: '20px', color: 'white', fontWeight: 'bold' }}>
               Thank you for subscribing, it means a lot to us!
             </p>
-          )
-        }
+            
+            )
+          }
+          <h1>Standard process of creating collages</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
+          {imagePaths.map((path, index) => (
+            <img 
+              key={index}
+              src={path} 
+              alt={`Image ${index + 1}`}
+              className="image-hover-effect"
+              onClick={() => handleImageClick(path)}
+              style={{ margin: '10px', width: '150px', height: '150px' }} // Adjust size as needed
+            />
+          ))}
+        </div>
+
+        {/* Large Image View */}
+        {selectedImagePath && (
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <img 
+              src={selectedImagePath}
+              alt="Enlarged view"
+              style={{ maxWidth: '90%', maxHeight: '90vh' }} // Adjust size as needed
+              onClick={() => setSelectedImagePath(null)} // Click again to close
+            />
+          </div>
+        )}
+            <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif' }}>Explore the contents</h1>
 
         <SeeWhatsInside />
       </div>
