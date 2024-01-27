@@ -12,7 +12,7 @@ const SeeWhatsInside: React.FC = () => {
   const descriptions: { [key: string]: string } = {
     'collage': 'Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.',
     'watermark': 'Automatically apply a watermark across your collage to deter unauthorized copying.',
-    'size': 'You can export the collage in any resolution of your choice.',
+    'size': 'You can export   the collage in any resolution of your choice.',
   };
 
   const getImageSrc = (feature: string) => {
@@ -82,24 +82,24 @@ const SeeWhatsInside: React.FC = () => {
             <p className="typing-effect">{typingState['collage']}</p>
             
           )} */}
-          <p>Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.</p>
+          <p style={{fontFamily: 'cursive' }}>Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.</p>
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '105px', height: '105px' }} className={popUp ? 'popUpEffect' : ''}/>
+          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''}/>
           <p style={{ color: selectedFeature === 'watermark' ? 'black' : 'gray' }}>Watermark</p>
           {selectedFeature === 'watermark' && (
-            <p className="typing-effect">{typingState['watermark']}</p>
+            <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['watermark']}</p>
           )}
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('size')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '85px', height: '85px', marginTop: '13px' }} className= {popUp ? 'popUpEffect' : ''} />
+          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '80px', height: '80px', marginTop: '15px', marginBottom: '5px' }} className= {popUp ? 'popUpEffect' : ''} />
           <p style={{ color: selectedFeature === 'size' ? 'black' : 'gray' }}>Sizing</p>
           {selectedFeature === 'size' && (
-            <p className="typing-effect">{typingState['size']}</p>
+            <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['size']}</p>
           )}
         </div>
       </div>
