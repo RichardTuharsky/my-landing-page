@@ -76,7 +76,7 @@ const SeeWhatsInside: React.FC = () => {
       <div className="options">
         <div className="option" onClick={() => handleFeatureClick('collage')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('collage')} alt="Collage" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''} />
+          <img src={getImageSrc('collage')} alt="Collage" style={{ width: '150px', height: '150px' }} className={popUp ? 'popUpEffect' : ''} />
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
           {selectedFeature === 'collage' && (
             <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['collage']} <span className="caret"></span> </p>
@@ -86,7 +86,7 @@ const SeeWhatsInside: React.FC = () => {
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''}/>
+          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '150px', height: '150px'}} className={popUp ? 'popUpEffect' : ''}/>
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'watermark' ? 'black' : 'gray' }}>Watermark</p>
           {selectedFeature === 'watermark' && (
             <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['watermark']}</p>
@@ -95,7 +95,7 @@ const SeeWhatsInside: React.FC = () => {
 
         <div className="option" onClick={() => handleFeatureClick('size')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '80px', height: '80px', marginTop: '15px', marginBottom: '5px' }} className= {popUp ? 'popUpEffect' : ''} />
+          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '110px', height: '110px', marginTop: '23px', marginBottom: '18px' }} className= {popUp ? 'popUpEffect' : ''} />
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'size' ? 'black' : 'gray' }}>Sizing</p>
           {selectedFeature === 'size' && (
             <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['size']}</p>
