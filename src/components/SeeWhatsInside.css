@@ -130,3 +130,19 @@
     50% { border-color: black; }
   }
   
+  @keyframes popUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .popUpEffect {
+    animation: popUp 1s ease-in-out infinite;
+  }
+  
