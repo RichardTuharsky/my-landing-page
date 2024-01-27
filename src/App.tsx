@@ -67,11 +67,11 @@ const handleImageClick = (path: string) => {
 };
 
 const imageDescriptions = [
-  'Description for Image 1',
-  'Description for Image 2',
-  'Description for Image 3',
-  'Description for Image 4',
-  'Description for Image 5'
+  'Prepare blank page',
+  'Upload the images',
+  'Center the images',
+  'Everyting aligned',
+  'Adjust watermarks'
 ];
 
 
@@ -184,7 +184,7 @@ const imageDescriptions = [
                 className="image-hover-effect"
                 style={{ width: '150px', height: '150px' }} // Adjust size as needed
               />
-              <p style={{ marginTop: '5px' }}>{imageDescriptions[index]}</p>
+              <p style={{ marginTop: '5px', fontWeight: 'bold',}}>{imageDescriptions[index]}</p>
             </div>
           ))}
 
