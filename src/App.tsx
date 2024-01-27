@@ -66,6 +66,16 @@ const handleImageClick = (path: string) => {
   setSelectedImagePath(path);
 };
 
+const imageDescriptions = [
+  'Description for Image 1',
+  'Description for Image 2',
+  'Description for Image 3',
+  'Description for Image 4',
+  'Description for Image 5'
+];
+
+
+
 
 
   return (
@@ -167,15 +177,17 @@ const handleImageClick = (path: string) => {
           <h1>Standard process of creating collages</h1>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
           {imagePaths.map((path, index) => (
-            <img 
-              key={index}
-              src={path} 
-              alt={`Image ${index + 1}`}
-              className="image-hover-effect"
-              onClick={() => handleImageClick(path)}
-              style={{ margin: '10px', width: '150px', height: '150px' }} // Adjust size as needed
-            />
+            <div key={index} style={{ margin: '10px', textAlign: 'center', position: 'relative' }}>
+              <img 
+                src={path} 
+                alt={`Image ${index + 1}`}
+                className="image-hover-effect"
+                style={{ width: '150px', height: '150px' }} // Adjust size as needed
+              />
+              <p style={{ marginTop: '5px' }}>{imageDescriptions[index]}</p>
+            </div>
           ))}
+
         </div>
 
         {/* Large Image View */}

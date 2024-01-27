@@ -40,9 +40,13 @@
 
 .image-hover-effect {
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .image-hover-effect:hover {
-  transform: scale(1.1); /* Enlarge the image slightly on hover */
+  transform: scale(3); /* Adjust scale factor as needed */
+  z-index: 2; /* Ensure the image is above other content */
 }
+
   
