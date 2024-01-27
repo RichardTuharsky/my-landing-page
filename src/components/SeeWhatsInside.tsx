@@ -76,7 +76,7 @@ const SeeWhatsInside: React.FC = () => {
       <div className="options">
         <div className="option" onClick={() => handleFeatureClick('collage')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('collage')} alt="Collage" style={{ width: '80px', height: '80px' }} className={popUp ? 'popUpEffect' : ''} />
+          <img src={getImageSrc('collage')} alt="Collage" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''} />
           <p style={{ color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
           {/* {selectedFeature === 'collage' && (
             <p className="typing-effect">{typingState['collage']}</p>
@@ -87,7 +87,7 @@ const SeeWhatsInside: React.FC = () => {
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '80px', height: '80px' }} className={popUp ? 'popUpEffect' : ''}/>
+          <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '105px', height: '105px' }} className={popUp ? 'popUpEffect' : ''}/>
           <p style={{ color: selectedFeature === 'watermark' ? 'black' : 'gray' }}>Watermark</p>
           {selectedFeature === 'watermark' && (
             <p className="typing-effect">{typingState['watermark']}</p>
@@ -96,7 +96,7 @@ const SeeWhatsInside: React.FC = () => {
 
         <div className="option" onClick={() => handleFeatureClick('size')}>
           {/* Replace these placeholders with actual icons */}
-          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '60px', height: '60px', marginTop: '13px' }} className= {popUp ? 'popUpEffect' : ''} />
+          <img src={getImageSrc('size')} alt="Sizing" style={{ width: '85px', height: '85px', marginTop: '13px' }} className= {popUp ? 'popUpEffect' : ''} />
           <p style={{ color: selectedFeature === 'size' ? 'black' : 'gray' }}>Sizing</p>
           {selectedFeature === 'size' && (
             <p className="typing-effect">{typingState['size']}</p>
