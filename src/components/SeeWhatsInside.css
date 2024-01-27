@@ -1,15 +1,30 @@
 .container {
-    background-color: #fff;
-    padding: 80px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 10px;
-    max-width: 800px;
-    min-height: 340px;
-    margin: 40px auto;
-    width: 90%;
-    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
-  }
+  background-color: #fff;
+  padding: 80px;
+  text-align: center;
+  box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.1),  /* Outer shadow */
+      0 6px 6px rgba(0, 0, 0, 0.1),    /* Inner shadow for depth */
+      inset 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle inset shadow */
+  border-radius: 15px; /* Rounded corners */
+  max-width: 800px;
+  min-height: 340px;
+  margin: 40px auto;
+  width: 90%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for hover effects */
+
+  /* Optional: Gradient Background */
+  /* background: linear-gradient(to right, #6dd5ed, #2193b0); */
+}
+
+.container:hover {
+  transform: translateY(-10px); /* Slightly raise the container on hover */
+  box-shadow: 
+      0 15px 30px rgba(0, 0, 0, 0.2),  /* Enhanced outer shadow on hover */
+      0 10px 10px rgba(0, 0, 0, 0.15); /* Enhanced inner shadow on hover */
+}
+
+
   
   .heading {
     color: #333;

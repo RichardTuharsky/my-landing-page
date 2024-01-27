@@ -42,11 +42,18 @@
   transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
+  box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.1),  /* Outer shadow */
+      0 6px 6px rgba(0, 0, 0, 0.1),    /* Inner shadow for depth */
+      inset 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle inset shadow */
 }
 
 .image-hover-effect:hover {
   transform: scale(2); /* Adjust scale factor as needed */
   z-index: 2; /* Ensure the image is above other content */
+  box-shadow: 
+  0 15px 30px rgba(0, 0, 0, 0.2),  /* Enhanced outer shadow on hover */
+  0 10px 10px rgba(0, 0, 0, 0.15); 
 }
 
   
