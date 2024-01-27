@@ -79,7 +79,7 @@ const SeeWhatsInside: React.FC = () => {
           <img src={getImageSrc('collage')} alt="Collage" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''} />
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
           {selectedFeature === 'collage' && (
-            <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['collage']}</p>
+            <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['collage']} <span className="caret"></span> </p>
             
           )}
         </div>
