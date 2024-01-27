@@ -76,7 +76,7 @@ function App() {
         background: '#ff6600',
         paddingTop: '80px', 
         flex: 1, 
-        paddingBottom: '150px',
+        paddingBottom: '200px',
         }}>
   
         <h1 style={{ 

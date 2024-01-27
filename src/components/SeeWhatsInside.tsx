@@ -78,11 +78,10 @@ const SeeWhatsInside: React.FC = () => {
           {/* Replace these placeholders with actual icons */}
           <img src={getImageSrc('collage')} alt="Collage" style={{ width: '100px', height: '100px' }} className={popUp ? 'popUpEffect' : ''} />
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'collage' ? 'black' : 'gray' }}>Collage</p>
-          {/* {selectedFeature === 'collage' && (
-            <p className="typing-effect">{typingState['collage']}</p>
+          {selectedFeature === 'collage' && (
+            <p style={{fontFamily: 'cursive' }} className="typing-effect">{typingState['collage']}</p>
             
-          )} */}
-          <p style={{fontFamily: 'cursive' }}>Craft collages as you like, in any size - be it 5x5, 3x5, 10x10, 30x30, or whatever suits your needs.</p>
+          )}
         </div>
 
         <div className="option" onClick={() => handleFeatureClick('watermark')}>
