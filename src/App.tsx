@@ -55,7 +55,7 @@ function App() {
   };
 
   const imagePaths = [
-    '/image1.png',
+    '/image0.png',
     '/image2.png',
     '/image3.png',
     '/image4.png',
