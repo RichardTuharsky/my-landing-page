@@ -84,11 +84,19 @@
   }
   
   .option {
-    flex-basis: 33%; /* Allocate equal width for each option */
+    flex-basis: 33%;
     text-align: center;
-    max-width: 300px; /* Example value, adjust as needed */
+    max-width: 300px;
     position: relative;
-  }
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for effects */
+    cursor: pointer; /* Optional: Changes the cursor on hover */
+}
+
+/* Optional: Hover effect */
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
   
   /* Add more styles as needed to option, heading, text, and button */
   
