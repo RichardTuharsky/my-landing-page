@@ -95,7 +95,7 @@ const imageDescriptions = [
         flexDirection: 'column', 
         alignItems: 'center', 
         height: '100vh', 
-        background: '#ff6600',
+        background: '#ee7e33',
         paddingTop: '80px', 
         flex: 1, 
         paddingBottom: '200px',
