@@ -17,9 +17,9 @@ const SeeWhatsInside: React.FC = () => {
 
   const getImageSrc = (feature: string) => {
     const baseSrc: { [key: string]: string } = {
-      'collage': 'Collage',
+      'collage': 'collage',
       'watermark': 'watermark',
-      'size': 'Sizing'
+      'size': 'size'
     };
 
     return selectedFeature === feature ? `${baseSrc[feature]}_color.png` : `${baseSrc[feature]}.png`;
@@ -74,11 +74,16 @@ const SeeWhatsInside: React.FC = () => {
   return (
     <div className="container">
       <div className="options">
+        
       <div 
           className="option" 
           onClick={() => handleFeatureClick('collage')}
-          style={selectedFeature === 'collage' ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' } : {}}
-        >
+            style={
+              selectedFeature === 'collage' 
+                ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' }
+                : {}
+            }
+          >
           <img 
             src={getImageSrc('collage')} 
             alt="Collage" 
@@ -94,8 +99,15 @@ const SeeWhatsInside: React.FC = () => {
             </p>
           )}
         </div>
-        <div className="option" onClick={() => handleFeatureClick('watermark')}  style={selectedFeature === 'collage' ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' } : {}}
-        >
+
+
+        <div className="option"   onClick={() => handleFeatureClick('watermark')}
+            style={
+              selectedFeature === 'watermark' 
+                ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' }
+                : {}
+            }
+          >
           {/* Replace these placeholders with actual icons */}
           <img src={getImageSrc('watermark')} alt="Watermark" style={{ width: '150px', height: '150px'}} className={popUp ? 'popUpEffect' : ''}/>
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'watermark' ? 'black' : 'gray' }}>Watermark</p>
@@ -104,8 +116,13 @@ const SeeWhatsInside: React.FC = () => {
           )}
         </div>
 
-        <div className="option" onClick={() => handleFeatureClick('size')}  style={selectedFeature === 'collage' ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' } : {}}
-        >
+        <div className="option" onClick={() => handleFeatureClick('size')}
+            style={
+              selectedFeature === 'size' 
+                ? { boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.5)' }
+                : {}
+            }
+          >
           {/* Replace these placeholders with actual icons */}
           <img src={getImageSrc('size')} alt="Sizing" style={{ width: '110px', height: '110px', marginTop: '23px', marginBottom: '18px' }} className= {popUp ? 'popUpEffect' : ''} />
           <p style={{ fontWeight: 'bold', color: selectedFeature === 'size' ? 'black' : 'gray' }}>Sizing</p>
