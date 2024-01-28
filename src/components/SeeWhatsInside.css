@@ -149,11 +149,11 @@
   
   
   
-  .popUpEffect {
+  /* .popUpEffect {
     animation-name: popUp;
-    animation-duration: 5s; /* Duration of one animation cycle */
+    animation-duration: 5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-delay: 4s; /* Initial delay before the animation starts */
+    animation-delay: 4s; 
   }
-  
+   */
