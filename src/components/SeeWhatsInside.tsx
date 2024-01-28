@@ -56,7 +56,6 @@ const SeeWhatsInside: React.FC = () => {
   }, [selectedFeature]);
 
 
-
   const [popUp, setPopUp] = useState(true);
 
     useEffect(() => {
@@ -99,7 +98,6 @@ const SeeWhatsInside: React.FC = () => {
             </p>
           )}
         </div>
-
 
         <div className="option"   onClick={() => handleFeatureClick('watermark')}
             style={
