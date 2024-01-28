@@ -202,7 +202,7 @@ const imageDescriptions = [
             />
           </div>
         )}
-            <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif', textDecoration: 'underline', textDecorationStyle: 'wavy' }}>Explore the contents</h1>
+            <h1 style={{ fontSize: "40px", marginBottom: "0px", marginTop: "70px", color: "white", fontFamily: 'sans-serif'}}>Explore the contents</h1>
         <SeeWhatsInside />
       </div>
         <div style={{ 
